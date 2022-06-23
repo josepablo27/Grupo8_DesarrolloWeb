@@ -18,18 +18,18 @@ public class Estado implements Serializable{
     private Long id_estado;
     String nombre;
     String capital;
-    int población;
-    int extensión;
+    int poblacion;
+    int extension;
 
     public Estado() {
     }
 
-    public Estado(Long id_estado, String nombre, String capital, int población, int extensión) {
+    public Estado(Long id_estado, String nombre, String capital, int poblacion, int extension) {
         this.id_estado = id_estado;
         this.nombre = nombre;
         this.capital = capital;
-        this.población = población;
-        this.extensión = extensión;
+        this.poblacion = poblacion;
+        this.extension = extension;
     }
 
    

@@ -1,0 +1,44 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Practica 01</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <!-- <header th:replace="layout/plantilla :: header" /> -->
+        <h2>Lista de Clientes</h2>
+
+        <a th:href="@{/nuevoEstado}">Nuevo Estado </a>
+        <br><br>
+        <div th:if="${estados != null and !estados.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id_Estado</th>
+                        <th>Nombre</th>
+                        <th>Capital</th>
+                        <th>Población</th>
+                        <th>Extensión (Km)</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${estados}">
+                        <td th:text="${item.id_estado}"></td>
+                        <td th:text="${item.nombre}"></td>
+                        <td th:text="${item.capital}"></td>
+                        <td th:text="${item.extension}"></td>
+                        <td><a th:href="@{modificarCliente/} + ${item.idEstado}">Modificar</a> </td>
+                        <td><a th:href="@{eliminarCliente/} + ${item.idEstado}">Eliminar</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div th:if="${estados == null or estadis.empty}">
+            No tenemos lista de clientes para mostrar.
+        </div>
+      <!--  <footer th:replace="layout/plantilla :: footer" /> -->
+    </body>
+</html>
