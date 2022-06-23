@@ -1,4 +1,3 @@
-
 package com.practica01.controller;
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,14 +12,14 @@ import com.practica01.service.EstadoService;
 public class IndexController {
     
     @Autowired
-    private EstadoService EstadoService;
+    private EstadoService estadoService;
 
     @GetMapping("/")
     public String inicio(Model model) {
-        log.info("Ahora utilizamos MVC");
+        log.info("Se muestra el día del mes, tanto como la hora y minuto");
 
         
-        var estados = EstadoService.getEstados();
+        var estados = estadoService.getEstados();
 
         model.addAttribute("estados", estados);
 
