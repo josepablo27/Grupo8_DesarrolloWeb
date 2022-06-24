@@ -1,4 +1,3 @@
-
 package com.practica01.domain;
         
 import java.io.Serializable;
@@ -7,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "practica")
+@Table(name = "estado")
 
 public class Estado implements Serializable{
     
@@ -15,7 +14,7 @@ public class Estado implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_estado;
+    private Long idEstado;
     String nombre;
     String capital;
     int poblacion;
@@ -24,8 +23,7 @@ public class Estado implements Serializable{
     public Estado() {
     }
 
-    public Estado(Long id_estado, String nombre, String capital, int poblacion, int extension) {
-        this.id_estado = id_estado;
+    public Estado(String nombre, String capital, int poblacion, int extension) {
         this.nombre = nombre;
         this.capital = capital;
         this.poblacion = poblacion;

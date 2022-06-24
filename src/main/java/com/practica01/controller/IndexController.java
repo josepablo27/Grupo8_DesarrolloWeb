@@ -20,8 +20,8 @@ public class IndexController {
         log.info("Se muestra el día del mes, tanto como la hora y minuto");
 
         
-        var estados = estadoService.getEstados();
-
+       var estados = estadoService.getEstados();
+      
         model.addAttribute("estados", estados);
 
         return "index";
@@ -38,14 +38,14 @@ public class IndexController {
         return "redirect:/";
     }
     
-    @GetMapping("/modificarEstado/{id_estado}")
+    @GetMapping("/modificarEstado/{idEstado}")
     public String modificarEstado(Estado estado, Model model){
         estado = estadoService.getEstado(estado);
         model.addAttribute("estado", estado);
         return "modificarEstado";
     }
     
-    @GetMapping("/eliminarEstado/{id_estado}")
+    @GetMapping("/eliminarEstado/{idEstado}")
     public String eliminarEstado(Estado estado){
         estadoService.delete(estado);
         return "redirect:/";

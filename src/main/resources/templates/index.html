@@ -5,9 +5,8 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        
         <!-- <header th:replace="layout/plantilla :: header" /> -->
-        <h2>Lista de Clientes</h2>
+        <h2>Lista de Estados</h2>
 
         <a th:href="@{/nuevoEstado}">Nuevo Estado </a>
         <br><br>
@@ -20,25 +19,26 @@
                         <th>Capital</th>
                         <th>Población</th>
                         <th>Extensión (Km)</th>
+                        <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="item : ${estados}">
-                        <td th:text="${item.id_estado}"></td>
+                        <td th:text="${item.idEstado}"></td>
                         <td th:text="${item.nombre}"></td>
                         <td th:text="${item.capital}"></td>
                         <td th:text="${item.extension}"></td>
-                        <td><a th:href="@{modificarCliente/} + ${item.idEstado}">Modificar</a> </td>
-                        <td><a th:href="@{eliminarCliente/} + ${item.idEstado}">Eliminar</a> </td>
+                      <td><a th:href="@{modificarEstado/} + ${item.idEstado}">Modificar</a> </td>
+                          <td><a th:href="@{eliminarEstado/} + ${item.idEstado}">Eliminar</a> </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div th:if="${estados == null or estadis.empty}">
-            No tenemos lista de clientes para mostrar.
+        <div th:if="${estados == null or estados.empty}">
+            No tenemos lista de estados para mostrar.
         </div>
-      <!--  <footer th:replace="layout/plantilla :: footer" /> -->
+        <!--  <footer th:replace="layout/plantilla :: footer" /> -->
     </body>
 </html>
