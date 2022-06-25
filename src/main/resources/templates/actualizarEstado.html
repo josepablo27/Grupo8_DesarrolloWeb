@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmnls="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Practica01</title>
+        <meta charset="UTF-8">
+        <link href="../Static/css/estilo1.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!-- <header th:replace="layout/plantilla :: header" /> -->
+        <h2>Información del estado</h2>
+        <a th:href="@{/}">Volver</a>
+        <br>
+        <br>
+        <form th:action="@{/guardarEstado}"
+              method="POST"
+              th:object="${estado}">
+            <input type="hidden" name="idEstado" th:field="*{idEstado}" />
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" th:field="*{nombre}">
+            <br>
+            <label for="capital">Capital:</label>
+            <input type="text" id="capital" name="capital" th:field="*{capital}">
+            <br>
+            <label for="poblacion">Poblacion:</label>
+            <input type="number" id="poblacion" name="poblacion" th:field="*{poblacion}">
+            <br>
+            <label for="extension">Extension:</label>
+            <input type="number" id="extension" name="extension" th:field="*{extension}">
+            <br>
+            <input type="submit" name="guardar" value="Guardar" />
+        </form>
+    </body>
+</html>
