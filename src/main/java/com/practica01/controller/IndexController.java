@@ -29,7 +29,7 @@ public class IndexController {
 }
      @GetMapping("/nuevoEstado")
     public String nuevoEstado(Estado estado){
-        return "modificarEstado";
+        return "actualizarEstado";
     }
     
     @PostMapping("/guardarEstado")
